@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="pixel.png">
+  <title>Pixel Art Maker By Akshat</title>
+  <style>
+  body{
+    margin           : 0          ;
+    padding          : 0          ;
+    background-color : #1D1E20    ;
+    color            : floralwhite;
+    font-family      : sans-serif ;
+    margin-left      : 5px        ;
+    width            : 355px      ;
+    background-repeat: no-repeat  ;
+    background-size  : 355px
+  }
+  .pixal{
+    width           : 10px ;
+    height          : 10px ;
+    background-color: white;
+    margin          : 0    ;
+    float           : left ;
+  }
+  .colorOps{
+    width           : 20.5px;
+    height          : 20.5px;
+    float           : left  ;
+  }
+  #colorBoard{
+    float     : left  ;
+    margin-top: 5px   ;
+    visibility: hidden;
+    width     : 350px
+  }
+    
+  .grid{outline : .5px solid lightgrey}
+  
+  .button{
+    padding         : 10px            ;
+    background-color: transparent     ;
+    border          : 1px solid white ;
+    color           : white           ;
+    float           : left            ;
+    margin          : 5px 3px 0 3px   ;
+  }
+  .selectedButton{
+    background-color: white  ;
+    color           : #1D1E20;
+  }
+  #propertyPanel{
+    padding         : 10px          ;
+    background-color: rgba(0,0,0,.5);
+    position        : fixed         ;
+    margin-top      : 2px           ; 
+    left            : 200px         ;    
+    border-radius   : 10px          ;
+    visibility      : hidden        ; 
+  }
+  </style>
+</head>
+
+<body>
+  
+  
+  <h1>P I X E L  A R T</h1>
+  
+  <div class="button" 
+       onclick="showPropertyPanel()"
+       style="
+      position : absolute;
+      top      : 15px    ;
+      left     : 325px   ;
+      font-size: 18px
+  "><b>?</b>
+  </div>
+  
+  <a href="index.html">
+    <div class="button" 
+         style="
+      position : absolute;
+      top      : 15px    ;
+      left     : 290px   ;
+      font-size: 18px    ; 
+  "><b>+</b>
+  </div></a>
+  
+  
+  
+  <div id="propertyPanel">
+    <table>
+      <tr>
+        <td>BackGround</td>
+        <td>:<div id="chosenBgColorCell" style="height: 15px; width: 30px;float: right;outline: 0.5px solid white;background-color: white"></div></td>
+      </tr>
+      <tr>
+        <td>Chosen Color</td>
+        <td>:<div id="chosenColorCell" style="height: 15px; width: 30px;float: right;outline: 0.5px solid white"></div></td>
+      </tr>
+      <tr>
+        <td>Grid</td>
+        <td id="gridCell">: OFF</td>
+      </tr>
+      <tr>
+        <td>Pixel Size</td>
+        <td>: 10px</td>
+      </tr>
+    </table>
+  </div>
+  
+  
+  
+  <div id="board"></div>
+  
+  
+  
+  <div onclick="showColors()" 
+       style="width: 60px "
+       class  ="button">    COLORS    </div>
+   
+  <div class  ="button"
+       style="width:50px"
+       onclick="grid()" 
+       id     ="gridButton">    GRIDS     </div>
+  
+  <div class  ="button" 
+       style="width: 90px"
+       onclick="hideBoard()" 
+       id     ="hideButton">HIDE BOARD</div>
+       
+  <div class="button"
+       style="width: 80px"
+       onclick="selectBgButton()"
+       id="bgButton">BGCOLOR    </div>
+  
+  <div id="colorBoard">
+    <div style="width: 41px ; height: 20.5px ; float: left" 
+         onclick="chooseEraser()"
+         id="eraser">Eraser</div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
